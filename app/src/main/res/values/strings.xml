@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">HelloWorld</string>
+
+    <string name="txtOutput">Hier sollte der Output-String erscheinen!</string>
+    <string name="action_settings">Settings</string>
+    <string name="strHintInputOne">Bitte geben Sie etwas ein One.</string>
+    <string name="strHintInputTwo">Bitte geben Sie etwas ein Two.</string>
+    <string name="strTextMergeInput">Merge Text</string>
+</resources>
