@@ -8,8 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final String MSG_NO_INPUT = "Bitte alle Textfelder ausfüllen";
 
     private TextView txtOutput = null;
     private EditText txtInputOne = null;
@@ -33,7 +36,23 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Implementierung
-                txtOutput.setText(txtInputOne.getText().toString() + " " + txtInputTwo.getText().toString());
+                //txtOutput.setText(txtInputOne.getText().toString() + " " + txtInputTwo.getText().toString());
+                String strInputOne = "";
+                String strInputTwo = "";
+
+                strInputOne = txtInputOne.getText().toString();
+                strInputTwo = txtInputTwo.getText().toString();
+
+                //Überprüfen ob beide Textfelder befüllt sind
+                 if (strInputOne.equals("") || strInputTwo.equals(""))
+                 {
+                    //Meldung ausgeben
+                     Toast.makeText(v.getContext(),MSG_NO_INPUT,Toast.LENGTH_LONG).show();
+                 }
+                else
+                 {
+                     txtOutput.setText(txtInputOne.getText().toString() + " " + txtInputTwo.getText().toString());
+                 }
             }
         });
     }
